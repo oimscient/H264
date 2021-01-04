@@ -32,7 +32,7 @@ namespace videos
                         Environment.Exit(0);
                     }
                     else {
-                        MessageBox.Show("设备不在线！");
+                        MessageBox.Show("终端设备不在线！");
                         Environment.Exit(0);
                     }
                     Tools.video.Enqueue(dest);
