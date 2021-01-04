@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0B89562-B259-4B54-A76F-D8FC9CC22965}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Beidou</RootNamespace>
+    <AssemblyName>Beidou</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JT808\Request\REQ_PB_9102.cs" />
+    <Compile Include="JT808\Request\REQ_PB_9101.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0002.cs" />
+    <Compile Include="Providers\IPacketProvider.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0001.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Reponse\REP_PB_0100.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Reponse\REP_PB_0102.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0104.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0107.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0108.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0200.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Reponse\REP_PB_0201.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0301.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0302.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Reponse\REP_PB_0303.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0500.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0700.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0701.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0702.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0704.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0705.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0800.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0801.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0802.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0805.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0900.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0901.cs" />
+    <Compile Include="JT808\Reponse\REP_PB_0A00.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8001.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Request\REQ_PB_8003.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Request\REQ_PB_8100.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8103.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Request\REQ_PB_8105.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Request\REQ_PB_8106.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8108.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Request\REQ_PB_8202.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Request\REQ_PB_8203.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8300.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8301.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JT808\Request\REQ_PB_8302.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8303.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8304.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8400.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8401.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8500.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8600.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8601.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8602.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8603.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8604.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8605.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8606.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8607.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8700.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8701.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8800.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8801.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8802.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8803.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8804.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8805.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8900.cs" />
+    <Compile Include="JT808\Request\REQ_PB_8A00.cs" />
+    <Compile Include="Nactive\Api.cs" />
+    <Compile Include="Providers\PacketProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="JT808\PacketBody.cs" />
+    <Compile Include="Structures\Comprehensive.cs" />
+    <Compile Include="Structures\PacketCommand.cs" />
+    <Compile Include="Structures\PacketMessage.cs" />
+    <Compile Include="Utils\BitConvert.cs" />
+    <Compile Include="Utils\Extension.cs" />
+    <Compile Include="Utils\RTP.cs" />
+    <Compile Include="Utils\VIdeoInit.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
