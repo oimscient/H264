@@ -46,8 +46,14 @@ namespace H264
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Connect.Stop(1, "video");
-            Connect.Stop(4, "audio");
+            try {
+                Connect.Stop(1, "video");
+                Connect.Stop(4, "audio");
+            }
+            catch {
+            
+            }
+       
         }
     }
 }

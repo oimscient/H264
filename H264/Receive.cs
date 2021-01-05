@@ -24,53 +24,58 @@ namespace videos
                 {
                     byte[] buffer = new byte[1024];
                     length = Videoclient.Receive(buffer);
+                    if (length == 0)
+                    {
+                        MessageBox.Show("连接断开！请退出");
+                        break;
+                    }
                     dest = new byte[length];
                     Array.Copy(buffer, dest, length);
                     if (Encoding.UTF8.GetString(dest) == "close")
                     {
-                        MessageBox.Show("当前车辆视频通道被占用！");
-                        Environment.Exit(0);
+                        MessageBox.Show("当前车辆视频通道被占用！请退出");
+                        break;
                     }
-                    else {
-                        MessageBox.Show("终端设备不在线！");
-                        Environment.Exit(0);
+                    else if (Encoding.UTF8.GetString(dest) == "none")
+                    {
+                        MessageBox.Show("终端设备不在线！请退出");
+                        break;
                     }
                     Tools.video.Enqueue(dest);
                 }
                 catch
                 {
-                    MessageBox.Show("连接断开！");
-                    Environment.Exit(0);
+                    MessageBox.Show("连接断开！请退出");
+                    break;
                 }
             }
         }
         public void ConnectServer()
         {
-            Videoclient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint point = new IPEndPoint(IPAddress.Parse("139.129.241.169"), int.Parse("8088"));
-            Videoclient.Connect(point);
+
             try
             {
+                Videoclient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                IPEndPoint point = new IPEndPoint(IPAddress.Parse("139.129.241.169"), int.Parse("8088"));
+                Videoclient.Connect(point);
                 Thread Thread = new Thread(Receive)
                 {
                     IsBackground = true
                 };
                 Thread.Start();
+                Audioclient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                IPEndPoint point2 = new IPEndPoint(IPAddress.Parse("139.129.241.169"), int.Parse("8091"));
+                Audioclient.BeginConnect(point2, asyncResult =>
+                {
+                    Audioclient.EndConnect(asyncResult);
+                    AsynRecive(Audioclient);
+                }, null);
+                Open(1, "video");
             }
             catch
             {
-                MessageBox.Show("连接失败！");
-                Environment.Exit(0);
+                MessageBox.Show("连接失败！请退出");
             }
-
-            Audioclient = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint point2 = new IPEndPoint(IPAddress.Parse("139.129.241.169"), int.Parse("8091"));
-            Audioclient.BeginConnect(point2, asyncResult =>
-            {
-                Audioclient.EndConnect(asyncResult);
-                AsynRecive(Audioclient);
-            }, null);
-            Open(1, "video");
         }
 
         /// <summary>
@@ -93,14 +98,15 @@ namespace videos
                         Tools.Audio.Enqueue(dest2);
                         AsynRecive(socket);
                     }
-                    catch {
-                       
+                    catch
+                    {
+
                     }
                 }, null);
             }
             catch
             {
-             
+
             }
         }
 
