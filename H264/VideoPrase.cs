@@ -548,9 +548,6 @@ namespace FVD.Common
             }
         }
         /// <summary>
-        /// 分解H264包
-        /// </summary>
-        /// <summary>
         /// 处理原始RTP包,分离G711码流
         /// </summary>
         public void AudioData()
