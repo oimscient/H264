@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace FVD.Common
+namespace RtpDecode
 {
     public class H264Dec
     {

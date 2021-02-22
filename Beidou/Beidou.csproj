@@ -94,91 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JT808\Request\REQ_PB_9102.cs" />
-    <Compile Include="JT808\Request\REQ_PB_9101.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0002.cs" />
     <Compile Include="Providers\IPacketProvider.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0001.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Reponse\REP_PB_0100.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Reponse\REP_PB_0102.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0104.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0107.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0108.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0200.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Reponse\REP_PB_0201.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0301.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0302.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Reponse\REP_PB_0303.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0500.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0700.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0701.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0702.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0704.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0705.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0800.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0801.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0802.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0805.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0900.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0901.cs" />
-    <Compile Include="JT808\Reponse\REP_PB_0A00.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8001.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Request\REQ_PB_8003.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Request\REQ_PB_8100.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8103.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Request\REQ_PB_8105.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Request\REQ_PB_8106.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8108.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Request\REQ_PB_8202.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Request\REQ_PB_8203.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8300.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8301.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="JT808\Request\REQ_PB_8302.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8303.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8304.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8400.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8401.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8500.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8600.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8601.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8602.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8603.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8604.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8605.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8606.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8607.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8700.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8701.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8800.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8801.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8802.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8803.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8804.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8805.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8900.cs" />
-    <Compile Include="JT808\Request\REQ_PB_8A00.cs" />
     <Compile Include="Nactive\Api.cs" />
     <Compile Include="Providers\PacketProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,6 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="JT808\Reponse\" />
+    <Folder Include="JT808\Request\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
